@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    My Blog
+{% endblock  %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}"/>
+{% endblock %}
+
+{% block content %}
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/selfportrait.jpg" %}" alt="Sarang - The Author Of This Blog"/>
+            <h2>Sarang Kale</h2>
+        </header>
+        <p>Hello, welcome to my blog! I love to post about my interests and hobbies. Feel free to look around.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I love to play sports, listen to music, and program for fun!
+        </p>
+        <img src="{% static "blog/images/SwampFlic.jpg" %}" alt="Sarang - The Author Of This Blog"/>
+        <p>
+            My goal is to become the best version of myself while also inspiring others around me.
+        </p>
+    </section>
+
+    <section id="lastest-posts">
+        <h2>My Latest Thoughts</h2>
+
+        <ul>
+            {% for post in posts %}
+            {% comment %}
+            
+            {% endcomment %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
